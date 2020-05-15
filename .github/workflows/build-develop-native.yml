@@ -1,0 +1,23 @@
+# This workflow will build a Quarkus project as Native Image
+
+name: Build native-image
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    name: Build native quarkus app
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@develop
+      - name: Build native executable
+        uses: maxday/quarkus-native-build-docker-action@1
+        with:
+           outputName: app-runner
