@@ -1,0 +1,34 @@
+DELETE http://localhost:8080/api/v1/profile/5ebd924496b6da340d355a13
+
+###
+PUT http://localhost:8080/api/v1/profile
+Content-Type: application/json
+
+{
+  "id": "5ebe43eca3128339b0c19fc9",
+  "firstName": "hampelmann",
+  "lastName": "mannoman",
+  "employeeId": "444444"
+}
+
+###
+GET http://localhost:8080/api/v1/profile?employeeid=444444
+Accept: application/json
+
+###
+GET http://localhost:8080/api/v1/profile
+Accept: application/json
+
+###
+GET http://localhost:8080/api/v1/profile/5ebd924496b6da340d355a13
+Accept: application/json
+
+###
+POST http://localhost:8080/api/v1/profile
+Content-Type: application/json
+
+{
+  "firstName": "lippen",
+  "lastName": "katja",
+  "employeeId": "123456"
+}

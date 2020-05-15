@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo
+    ports:
+        - 27017:27017
+    networks:
+      - backend
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: cloudbug
+      MONGO_INITDB_ROOT_PASSWORD: cloudbug
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8888:8081
+    networks:
+      - backend
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: cloudbug
+      ME_CONFIG_MONGODB_ADMINPASSWORD: cloudbug
+
+networks:
+  backend:
+    driver: bridge
