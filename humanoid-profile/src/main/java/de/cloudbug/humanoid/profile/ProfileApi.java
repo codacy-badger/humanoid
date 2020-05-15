@@ -1,6 +1,5 @@
 package de.cloudbug.humanoid.profile;
 
-import de.cloudbug.humanoid.profile.client.ProjectService;
 import org.bson.types.ObjectId;
 import org.eclipse.microprofile.metrics.MetricUnits;
 import org.eclipse.microprofile.metrics.annotation.Counted;
@@ -32,9 +31,6 @@ public class ProfileApi {
 
     @Inject
     ProfileService profileService;
-
-    @Inject
-    ProjectService projectService;
 
     @Operation(summary = "Returns a profile for a given identifier")
     @APIResponse(responseCode = "200", content = @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Profile.class)))
